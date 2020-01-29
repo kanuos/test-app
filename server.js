@@ -1,5 +1,5 @@
 const express = require('express')
-const cors = require('cors')
+// const cors = require('cors')
 const dotenv = require('dotenv')
 const thoughtRoutes = require('./Routes')
 const mongoose = require('mongoose')
@@ -20,9 +20,9 @@ mongoose.connect(process.env.MONGODB_URI,{ useNewUrlParser: true, useUnifiedTopo
 const app = express();
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
-app.use(cors())
+// app.use(cors())
 
-app.use('/', thoughtRoutes)
+app.use('/api', thoughtRoutes)
 
 
 if (process.env.NODE_ENV === 'production'){

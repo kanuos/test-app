@@ -5,7 +5,7 @@ const putData = async (title, thought) =>{
     try{
         const responseServer = await Axios({
             method: 'POST',
-            url: 'http://localhost:8000',
+            url: '/api',
             data: {text: thought, title}
         })
         return responseServer.status

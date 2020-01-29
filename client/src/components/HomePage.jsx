@@ -8,7 +8,7 @@ const HomePage = ({requestCount, setMessage}) => {
         {
             const serverResponse = await axios({
             method: 'GET',
-            url:'http://localhost:8000/',
+            url:'/api',
         })
         if(serverResponse.status === 200){
             setThoughts([...serverResponse.data.thoughts].sort((a,b)=> Date.parse(b.date) - Date.parse(a.date)))
