@@ -8,7 +8,7 @@ const path = require('path')
 dotenv.config()
 const PORT = process.env.PORT;
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://kanuos:Qwertyuiop1@cluster0-wcipd.mongodb.net/test?retryWrites=true&w=majority',{ useNewUrlParser: true, useUnifiedTopology: true } , (err, success)=>{
+mongoose.connect(process.env.MONGODB_URI,{ useNewUrlParser: true, useUnifiedTopology: true } , (err, success)=>{
     if(err){
         console.log(err)
     }else{
